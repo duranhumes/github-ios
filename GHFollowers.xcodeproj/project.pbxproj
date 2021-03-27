@@ -40,6 +40,11 @@
 		15B50F2F260D052600DB8035 /* Strings+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B50F2E260D052600DB8035 /* Strings+Ext.swift */; };
 		15B50F3C260D2D6000DB8035 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B50F3B260D2D6000DB8035 /* PersistenceManager.swift */; };
 		15B50F41260D395C00DB8035 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B50F40260D395C00DB8035 /* FavoriteCell.swift */; };
+		15B50F47260E567900DB8035 /* GFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B50F46260E567900DB8035 /* GFTabBarController.swift */; };
+		15B50F52260EB4F400DB8035 /* GFAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B50F51260EB4F400DB8035 /* GFAlertContainerView.swift */; };
+		15B50F57260EBAEF00DB8035 /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B50F56260EBAEF00DB8035 /* GFDataLoadingVC.swift */; };
+		15B50F5C260EC4AB00DB8035 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B50F5B260EC4AB00DB8035 /* UIView+Ext.swift */; };
+		15B50F61260ED2C700DB8035 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B50F60260ED2C700DB8035 /* UITableView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +102,11 @@
 		15B50F2E260D052600DB8035 /* Strings+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Ext.swift"; sourceTree = "<group>"; };
 		15B50F3B260D2D6000DB8035 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		15B50F40260D395C00DB8035 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		15B50F46260E567900DB8035 /* GFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabBarController.swift; sourceTree = "<group>"; };
+		15B50F51260EB4F400DB8035 /* GFAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainerView.swift; sourceTree = "<group>"; };
+		15B50F56260EBAEF00DB8035 /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
+		15B50F5B260EC4AB00DB8035 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		15B50F60260ED2C700DB8035 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +148,7 @@
 		155CFB2C25FEA985007AC107 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				15B50F45260E565B00DB8035 /* TabBarControllers */,
 				15B50EEC260AC6CE00DB8035 /* ViewControllers */,
 				15B50EEB260AC6C500DB8035 /* Labels */,
 				15B50EEA260AC6BC00DB8035 /* ImageViews */,
@@ -155,6 +166,8 @@
 				155CFB2525FEA725007AC107 /* UIVC+Ext.swift */,
 				15B50F29260D050300DB8035 /* Dates+Ext.swift */,
 				15B50F2E260D052600DB8035 /* Strings+Ext.swift */,
+				15B50F5B260EC4AB00DB8035 /* UIView+Ext.swift */,
+				15B50F60260ED2C700DB8035 /* UITableView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,8 +304,18 @@
 				15B50F17260CF16100DB8035 /* GFItemInfoVC.swift */,
 				15B50F1F260CF74100DB8035 /* GFRepoItemVC.swift */,
 				15B50F24260D00BE00DB8035 /* GFFollowersItemVC.swift */,
+				15B50F51260EB4F400DB8035 /* GFAlertContainerView.swift */,
+				15B50F56260EBAEF00DB8035 /* GFDataLoadingVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		15B50F45260E565B00DB8035 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				15B50F46260E567900DB8035 /* GFTabBarController.swift */,
+			);
+			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,17 +457,20 @@
 				155CFB3F25FEADC2007AC107 /* User.swift in Sources */,
 				155CFB5A25FEC2B0007AC107 /* FollowerCell.swift in Sources */,
 				15B50F2F260D052600DB8035 /* Strings+Ext.swift in Sources */,
+				15B50F61260ED2C700DB8035 /* UITableView+Ext.swift in Sources */,
 				155CFB6225FECCAE007AC107 /* GFAvatarImageView.swift in Sources */,
 				15B50F3C260D2D6000DB8035 /* PersistenceManager.swift in Sources */,
 				15B50F41260D395C00DB8035 /* FavoriteCell.swift in Sources */,
 				155CFB2125FEA16E007AC107 /* GFAlertVC.swift in Sources */,
 				15B50F20260CF74100DB8035 /* GFRepoItemVC.swift in Sources */,
+				15B50F52260EB4F400DB8035 /* GFAlertContainerView.swift in Sources */,
 				15B50EF6260ACFE200DB8035 /* UserInfoVC.swift in Sources */,
 				15B50F2A260D050300DB8035 /* Dates+Ext.swift in Sources */,
 				155CFB3A25FEAD05007AC107 /* Follower.swift in Sources */,
 				1592D55B25FDC0AB009B814F /* SceneDelegate.swift in Sources */,
 				15B50F03260CC46200DB8035 /* GFSecondaryTitleLabel.swift in Sources */,
 				155CFB1725FE3EC6007AC107 /* GFTitleLabel.swift in Sources */,
+				15B50F57260EBAEF00DB8035 /* GFDataLoadingVC.swift in Sources */,
 				155CFB1225FE39FC007AC107 /* FollowerListVC.swift in Sources */,
 				15B50F18260CF16100DB8035 /* GFItemInfoVC.swift in Sources */,
 				15B50F25260D00BE00DB8035 /* GFFollowersItemVC.swift in Sources */,
@@ -453,8 +479,10 @@
 				155CFB4825FEB2F9007AC107 /* NetworkManager.swift in Sources */,
 				155CFB0D25FE30E1007AC107 /* GFTextField.swift in Sources */,
 				15B50F12260CDA9800DB8035 /* GFItemInfoView.swift in Sources */,
+				15B50F5C260EC4AB00DB8035 /* UIView+Ext.swift in Sources */,
 				155CFB1C25FE401A007AC107 /* GFBodyLabel.swift in Sources */,
 				15B50F0D260CCEE200DB8035 /* Constants.swift in Sources */,
+				15B50F47260E567900DB8035 /* GFTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z94Z35Q728;
 				INFOPLIST_FILE = GHFollowers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -628,6 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z94Z35Q728;
 				INFOPLIST_FILE = GHFollowers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesListVC: UIViewController {
+class FavoritesListVC: GFDataLoadingVC {
     let tableView = UITableView()
 
     var favorites: [Follower] = []
@@ -42,6 +42,7 @@ class FavoritesListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseID)
+        tableView.removeExcessCells()
     }
 
     func getFavorites() {
@@ -86,10 +87,7 @@ extension FavoritesListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favorite = favorites[indexPath.row]
 
-        let destinationVC = FollowerListVC()
-
-        destinationVC.userName = favorite.login
-        destinationVC.title = favorite.login
+        let destinationVC = FollowerListVC(userName: favorite.login)
 
         navigationController?.pushViewController(destinationVC, animated: true)
     }
@@ -99,14 +97,16 @@ extension FavoritesListVC: UITableViewDataSource, UITableViewDelegate {
 
         let favorite = favorites[indexPath.row]
 
-        favorites.remove(at: indexPath.row)
-
-        tableView.deleteRows(at: [indexPath], with: .left)
-
         PersistenceManager.update(favorite: favorite, actionType: .remove) { [weak self] error in
             guard let self = self else { return }
 
-            guard let error = error else { return }
+            guard let error = error else {
+                self.favorites.remove(at: indexPath.row)
+
+                tableView.deleteRows(at: [indexPath], with: .left)
+
+                return
+            }
 
             self.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
